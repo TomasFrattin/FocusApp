@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import Dashboard from './pages/Dashboard'
 import Layout from './components/Layout'
+import Feedback from './components/Feedback'
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/focus" element={<Dashboard />} />
         </Routes>
+                <Feedback />
       </Layout>
     </Router>
   )

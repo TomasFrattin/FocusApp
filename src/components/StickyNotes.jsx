@@ -194,7 +194,7 @@ const StickyNotes = () => {
                 type="text"
                 value={note.title}
                 className="w-full h-full font-bold text-center outline-none"
-                placeholder="Título"
+                placeholder="Title"
               />
               <button
                 onClick={() => removeNote(note.id)}

@@ -84,7 +84,7 @@ const Feedback = () => {
         {isOpen && (
           <motion.div
             key="modal"
-            className="fixed inset-0 bg-[#2d2d2db7] bg-opacity-50 backdrop-blur-xs flex items-center justify-center z-50"
+            className="fixed inset-0 bg-black/60 backdrop-blur-xs flex items-center justify-center z-50"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -93,7 +93,7 @@ const Feedback = () => {
             }}
           >
             <motion.div
-              className="relative p-8 rounded-lg w-96 shadow-lg bg-[#2e2e2e]"
+              className="relative p-8 rounded-lg w-96 shadow-lg bg-[#2e2e2e]/90"
               initial={{ scale: 0.8 }}
               animate={{ scale: 1 }}
               exit={{ opacity: 0, scale: 0.8 }}
