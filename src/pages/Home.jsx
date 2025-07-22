@@ -26,8 +26,8 @@ const Home = () => {
         }}
         className="flex flex-col items-center justify-center"
       >
-        <h1 className="font-bold mb-4 ">Bienvenido a Focus App</h1>
-        <p className="mb-6 max-w-md ">
+        <h1 className="font-bold mb-4 drop-shadow-md">Bienvenido a Focus App</h1>
+        <p className="mb-6 max-w-md text-lg">
           Una herramienta simple para ayudarte a estudiar, concentrarte y
           organizarte.
         </p>
@@ -59,7 +59,7 @@ const Home = () => {
         }}
       >
         {!clicked && (
-          <span className="font-semibold">Let’s Focus</span>
+          <span className="font-semibold text-lg">Let’s Focus</span>
         )}
       </motion.div>
     </div>

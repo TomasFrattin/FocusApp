@@ -13,11 +13,10 @@ const Dashboard = () => {
 
   // Animaciones para el bloque central
   const introVariants = {
-    hidden: { opacity: 0, y: 0, x: "50vh" },
+    hidden: { opacity: 0, x: 100 },
     visible: {
       opacity: 1,
-      x: "50vh",
-      y: -200,
+      x: 0,
       transition: {
         duration: 0.9,
         type: "spring",
@@ -37,11 +36,17 @@ const Dashboard = () => {
       <AnimatePresence>
         {!showIntro && (
           <motion.h1
-            className="fixed top-4 left-4 text-3xl font-bold z-30 text-white drop-shadow-md"
+            className="fixed top-4 left-4 font-bold z-30 text-white drop-shadow-md"
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ type: "spring", stiffness: 150, damping: 12, bounce: 0.6 }}
+            transition={{
+              type: "spring",
+              stiffness: 150,
+              damping: 12,
+              bounce: 0.6,
+              delay: 0.5,
+            }}
           >
             Dashboard
           </motion.h1>
@@ -52,23 +57,32 @@ const Dashboard = () => {
       <AnimatePresence>
         {showIntro && (
           <motion.div
-            className="text-center bg-black/60 p-8 rounded-lg shadow-xl max-w-lg z-20"
             variants={introVariants}
             initial="hidden"
             animate="visible"
             exit="exit"
+            style={{
+              position: "fixed",
+              textAlign: "center",
+              top: "20%",
+              transform: "translate(-50%, -20%)",
+              width: "90%",
+              maxWidth: "600px",
+            }}
           >
-            <motion.h1 className="text-4xl font-bold text-white mb-4">Dashboard</motion.h1>
-            <motion.p className="text-gray-200 leading-relaxed">
-              Este es tu <strong>Dashboard personal</strong>.<br />
-              Acá podés{" "}
+            <motion.h1 className="text-4xl font-bold text-white mb-4 drop-shadow-md">
+              Dashboard
+            </motion.h1>
+            <motion.p className="text-gray-200 leading-relaxed text-lg pointer-default">
+              Este es tu <strong>Dashboard personal</strong>. Acá podés{" "}
               <strong>
-                crear notas, usar herramientas flotantes, temporizadores, reproducir música
+                crear notas, usar herramientas flotantes, temporizadores,
+                reproducir música
               </strong>
-              , y mucho más.<br />
-              Todo lo que ves flotando es tu caja de herramientas:{" "}
-              <strong>explorá, movelas, usalas.</strong><br />
-              Ahora sí… <strong>enfocate</strong> y hacé que las ideas pasen del aire al papel.
+              , y mucho más. Todo lo que ves flotando es tu caja de
+              herramientas: <strong>explorá, movelas, usalas.</strong>
+              Ahora sí… <strong>enfocate</strong> y hacé que las ideas pasen del
+              aire al papel.
             </motion.p>
             <motion.span
               className="block text-sm text-gray-300 mt-4 cursor-pointer"
@@ -76,7 +90,7 @@ const Dashboard = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              transition={{ delay: 0.5, duration: 0.6 }}
+              transition={{ delay: 0.6, duration: 0.6 }}
             >
               (click para comenzar)
             </motion.span>
